@@ -3,7 +3,7 @@ no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname Router1
+hostname R2
 !
 !
 !
