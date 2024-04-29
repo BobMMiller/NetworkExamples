@@ -1,4 +1,4 @@
-Current configuration : 887 bytes
+Current configuration : 1125 bytes
 !
 version 15.4
 no service timestamps log datetime msec
@@ -48,6 +48,14 @@ interface GigabitEthernet0/0/1
  duplex auto
  speed auto
 !
+interface GigabitEthernet0/0/1.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+!
+interface GigabitEthernet0/0/1.40
+ encapsulation dot1Q 40
+ ip address 192.168.40.1 255.255.255.0
+!
 interface GigabitEthernet0/0/2
  no ip address
  duplex auto
@@ -64,6 +72,7 @@ router ospf 1
  network 10.100.0.0 0.0.0.255 area 0
  network 1.1.1.0 0.0.0.255 area 0
  network 10.0.1.0 0.0.0.255 area 0
+ network 192.168.0.0 0.0.255.255 area 0
 !
 ip classless
 !
