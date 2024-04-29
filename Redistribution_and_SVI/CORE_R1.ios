@@ -1,0 +1,93 @@
+Current configuration : 1035 bytes
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CORE_R1
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.0
+!
+interface GigabitEthernet0/0/0
+ ip address 10.0.0.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ ip address 10.100.0.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router eigrp 65001
+ redistribute ospf 1 metric 100 10 255 1 1500 
+ network 10.0.0.0 0.0.0.255
+ network 3.3.3.0 0.0.0.255
+ auto-summary
+!
+router ospf 1
+ router-id 2.2.2.2
+ log-adjacency-changes
+ redistribute eigrp 65001 metric 100 subnets 
+ network 10.100.0.0 0.0.0.255 area 0
+ network 2.2.2.0 0.0.0.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
