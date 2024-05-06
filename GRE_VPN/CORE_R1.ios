@@ -1,0 +1,122 @@
+Current configuration : 1923 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CORE_R1
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524TOLO-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.0
+!
+interface Tunnel0
+ ip address 172.18.0.1 255.255.255.0
+ mtu 1476
+ tunnel source GigabitEthernet0/0/0
+ tunnel destination 172.17.0.1
+!
+!
+interface GigabitEthernet0/0
+ ip address 10.0.0.2 255.255.255.0
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 10.100.0.2 255.255.255.0
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/0
+ ip address 172.16.0.1 255.255.255.0
+ ip nat outside
+!
+interface Vlan1
+ no ip address
+!
+router eigrp 65001
+ redistribute ospf 1 metric 100 10 255 1 1500 
+ network 10.0.0.0 0.0.0.255
+ network 3.3.3.0 0.0.0.255
+ network 172.18.0.0 0.0.0.255
+ auto-summary
+!
+router ospf 1
+ router-id 2.2.2.2
+ log-adjacency-changes
+ redistribute eigrp 65001 metric 100 subnets 
+ network 10.100.0.0 0.0.0.255 area 0
+ network 2.2.2.0 0.0.0.255 area 0
+ network 172.18.0.0 0.0.0.255 area 0
+!
+ip nat pool ovrld 172.16.0.3 172.16.0.3 netmask 255.255.255.255
+ip nat inside source list 7 pool ovrld overload
+ip default-gateway 172.16.0.1
+ip classless
+ip route 0.0.0.0 0.0.0.0 172.16.0.2 
+ip route 172.18.0.0 255.255.255.0 GigabitEthernet0/0/0 
+ip route 192.168.60.0 255.255.255.0 172.18.0.2 
+!
+ip flow-export version 9
+!
+!
+access-list 7 permit 10.0.0.0 0.0.0.255
+access-list 7 permit 10.100.0.0 0.0.0.255
+access-list 7 permit 192.168.10.0 0.0.0.255
+access-list 7 permit 192.168.20.0 0.0.0.255
+access-list 7 permit 192.168.30.0 0.0.0.255
+access-list 7 permit 192.168.40.0 0.0.0.255
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
