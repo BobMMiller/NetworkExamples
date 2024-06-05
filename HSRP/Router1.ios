@@ -1,0 +1,94 @@
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/0.10
+ encapsulation dot1Q 10
+ ip address 10.0.0.5 255.255.255.0
+ ip nat inside
+ standby 1 ip 10.0.0.254
+ standby 1 priority 105
+ standby preempt
+!
+interface GigabitEthernet0/0/1
+ ip address 172.16.0.2 255.255.255.248
+ ip nat outside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 10.0.0.0 0.0.0.255 area 0
+!
+ip nat inside source list nat interface GigabitEthernet0/0/1 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 172.16.0.1 
+!
+ip flow-export version 9
+!
+!
+ip access-list standard nat
+ permit any
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
