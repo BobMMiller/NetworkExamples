@@ -1,2 +1,2 @@
 Topology I've created in CML for work \
-![image](https://github.com/BobMMiller/NetworkExamples/blob/main/CML_ELAN.jpg)
+![image](https://github.com/BobMMiller/NetworkExamples/ELAN/blob/main/CML_ELAN.jpg
