@@ -1,0 +1,3353 @@
+annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3896 bytes
+          !
+          ! Last configuration change at 20:06:00 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site8-9300-Core-STK
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 172.20.0.8 255.255.255.240
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+          !
+          interface GigabitEthernet3/2
+           switchport access vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet3/3
+           switchport access vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface Vlan780
+           ip address 172.18.0.8 255.255.255.240
+          !
+          router ospf 1
+           router-id 172.18.0.8
+           redistribute connected subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 172.20.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: SIte8-9300-STK
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -604
+    y: 147
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 4022 bytes
+          !
+          ! Last configuration change at 20:06:08 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site1-9300-Core-STK
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 172.20.0.1 255.255.255.240
+          !
+          interface GigabitEthernet0/0
+           switchport access vlan 780
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+          !
+          interface GigabitEthernet3/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet3/3
+           switchport access vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface Vlan780
+           ip address 172.18.0.1 255.255.255.240
+           no ip redirects
+           no ip unreachables
+           ip ospf priority 255
+          !
+          router ospf 1
+           router-id 172.18.0.1
+           priority 127
+           redistribute connected subnets
+           redistribute static subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 172.20.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: Site1-9300-STK
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -659
+    y: -72
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3869 bytes
+          !
+          ! Last configuration change at 20:06:39 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site2-9500-Core-VSS
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          spanning-tree vlan 780 priority 0
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 172.20.0.2 255.255.255.240
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport access vlan 780
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+          !
+          interface GigabitEthernet3/2
+           negotiation auto
+          !
+          interface GigabitEthernet3/3
+           negotiation auto
+          !
+          interface Vlan780
+           ip address 172.18.0.2 255.255.255.240
+           no ip redirects
+           no ip unreachables
+           ip ospf priority 250
+          !
+          router ospf 1
+           router-id 172.18.0.2
+           redistribute connected subnets
+           redistribute static subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 172.20.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: Site2-C9500-VSS
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -651
+    y: -278
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3873 bytes
+          !
+          ! Last configuration change at 20:06:09 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site3-9300-Core-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           switchport access vlan 780
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+          !
+          interface GigabitEthernet3/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet3/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface Vlan780
+           mac-address aaaa.aaaa.aaaa
+           ip address 172.18.0.3 255.255.255.240
+          !
+          router ospf 1
+           router-id 172.18.0.3
+           redistribute connected subnets
+           redistribute static subnets route-map static2ospf
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: Site3-C9300-Core-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -222
+    y: -286
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 4097 bytes
+          !
+          ! Last configuration change at 20:06:38 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site4-9300-Core-STK
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          no process cpu extended history
+          no process cpu autoprofile hog
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          no cdp run
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/1
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface Vlan780
+           ip address 172.18.0.4 255.255.255.240
+          !
+          router ospf 1
+           router-id 172.18.0.4
+           redistribute connected subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          no service-routing capabilities-manager
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: Site4-C9300-Core-STK
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -169
+    y: -85
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 4125 bytes
+          !
+          ! Last configuration change at 20:06:40 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site5-9300-Core-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          no process cpu extended history
+          no process cpu autoprofile hog
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          no cdp run
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface Vlan780
+           ip address 172.18.0.5 255.255.255.240
+          !
+          router ospf 1
+           router-id 172.18.0.5
+           redistribute connected subnets
+           redistribute static subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          no service-routing capabilities-manager
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: Site5-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -121
+    y: 81
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 4153 bytes
+          !
+          ! Last configuration change at 20:06:36 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site6-9300-Core-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          no process cpu extended history
+          no process cpu autoprofile hog
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          no cdp run
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface GigabitEthernet3/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+           no cdp enable
+          !
+          interface Vlan780
+           mac-address 1234.1234.1234
+           ip address 172.18.0.6 255.255.255.240
+          !
+          router ospf 1
+           router-id 172.18.0.6
+           redistribute connected subnets
+           redistribute static subnets
+           network 10.0.0.0 0.255.255.255 area 0
+           network 172.18.0.0 0.0.0.15 area 0
+           network 192.168.0.0 0.0.255.255 area 0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          no service-routing capabilities-manager
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: Site6-C9300-Core-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -189
+    y: 199
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3280 bytes
+          !
+          ! Last configuration change at 20:07:56 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site7-9300-Core-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          interface GigabitEthernet3/0
+           negotiation auto
+          !
+          interface GigabitEthernet3/1
+           negotiation auto
+          !
+          interface GigabitEthernet3/2
+           negotiation auto
+          !
+          interface GigabitEthernet3/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: Site7-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -426
+    y: 177
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+      - id: i13
+        label: GigabitEthernet3/0
+        slot: 12
+        type: physical
+      - id: i14
+        label: GigabitEthernet3/1
+        slot: 13
+        type: physical
+      - id: i15
+        label: GigabitEthernet3/2
+        slot: 14
+        type: physical
+      - id: i16
+        label: GigabitEthernet3/3
+        slot: 15
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: Site4A-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 0
+    y: -198
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n9
+    image_definition: null
+    label: Site4B-C9300-STK
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 36
+    y: -127
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n10
+    image_definition: null
+    label: Site4C-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 43
+    y: -49
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n11
+    image_definition: null
+    label: Site4D-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 29
+    y: 33
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2694 bytes
+          !
+          ! Last configuration change at 20:09:33 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site2-C9300-Dist-STK
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n12
+    image_definition: null
+    label: Site2-C9300-STK
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -826
+    y: -277
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2693 bytes
+          !
+          ! Last configuration change at 13:52:35 UTC Mon Oct 28 2024
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site2-C9300-STK
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n13
+    image_definition: null
+    label: X 2960
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -981
+    y: -278
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n14
+    image_definition: null
+    label: Site1 App Servers
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: -822
+    y: -70
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3559 bytes
+          !
+          ! Last configuration change at 20:08:44 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname ELAN
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet1/0
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet1/1
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet1/2
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet1/3
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet2/0
+           negotiation auto
+          !
+          interface GigabitEthernet2/1
+           negotiation auto
+          !
+          interface GigabitEthernet2/2
+           negotiation auto
+          !
+          interface GigabitEthernet2/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n15
+    image_definition: null
+    label: ELAN
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -366
+    y: -42
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+      - id: i9
+        label: GigabitEthernet2/0
+        slot: 8
+        type: physical
+      - id: i10
+        label: GigabitEthernet2/1
+        slot: 9
+        type: physical
+      - id: i11
+        label: GigabitEthernet2/2
+        slot: 10
+        type: physical
+      - id: i12
+        label: GigabitEthernet2/3
+        slot: 11
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2848 bytes
+          !
+          ! Last configuration change at 20:08:25 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site2-9200-ELAN-Handoff-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           switchport access vlan 780
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n16
+    image_definition: null
+    label: Site2-C9200-ELAN-Handoff-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -515
+    y: -230
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2848 bytes
+          !
+          ! Last configuration change at 20:09:21 UTC Thu Jun 12 2025
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname Site3-9200-ELAN-Handoff-SW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           switchport access vlan 780
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport trunk allowed vlan 780
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n17
+    image_definition: null
+    label: Site3-C9200-ELAN-Handoff-Sw
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -278
+    y: -199
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: day0-config
+        content: |-
+          hostname Site2-C2110-FTD
+          !
+          enable password Cisco1@3
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n18
+    image_definition: null
+    label: Site2-C2110-FTD
+    node_definition: asav
+    parameters: {}
+    ram: null
+    tags: []
+    x: -650
+    y: -363
+    interfaces:
+      - id: i0
+        label: Management0/0
+        slot: 0
+        type: physical
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: day0-config
+        content: |-
+          hostname Site3-C2110-FTD
+          !
+          enable password Cisco1@3
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n19
+    image_definition: null
+    label: Site3-C2110-FTD
+    node_definition: asav
+    parameters: {}
+    ram: null
+    tags: []
+    x: -223
+    y: -364
+    interfaces:
+      - id: i0
+        label: Management0/0
+        slot: 0
+        type: physical
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n20
+    image_definition: null
+    label: Site4-C2110-FTD
+    node_definition: asav
+    parameters: {}
+    ram: null
+    tags: []
+    x: 4
+    y: -317
+    interfaces:
+      - id: i0
+        label: Management0/0
+        slot: 0
+        type: physical
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: day0-config
+        content: |-
+          hostname Site1-C2110-FTD
+          !
+          enable password Cisco1@3
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n21
+    image_definition: null
+    label: Site1-C2110-FTD
+    node_definition: asav
+    parameters: {}
+    ram: null
+    tags: []
+    x: -661
+    y: -158
+    interfaces:
+      - id: i0
+        label: Management0/0
+        slot: 0
+        type: physical
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n22
+    image_definition: null
+    label: Site9-C9300-SW
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags:
+      - Core
+    x: -713
+    y: 54
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: day0-config
+        content: |-
+          hostname Site9-C3105-FTD
+          !
+          enable password Cisco1@3
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n23
+    image_definition: null
+    label: Site9-C3105-FTD
+    node_definition: asav
+    parameters: {}
+    ram: null
+    tags: []
+    x: -856
+    y: 54
+    interfaces:
+      - id: i0
+        label: Management0/0
+        slot: 0
+        type: physical
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname Site9-C3105-FTD
+          # configurable user account
+          USERNAME=cisco
+          PASSWORD=cisco
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n24
+    image_definition: null
+    label: Site2 App Servers
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: -826
+    y: -369
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname inserthostname-here
+          # configurable user account
+          USERNAME=cisco
+          PASSWORD=cisco
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n25
+    image_definition: null
+    label: DR App Servers
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: -606
+    y: 238
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+lab:
+  description: ''
+  notes: ''
+  title: Main ELAN lab
+  version: 0.2.2
