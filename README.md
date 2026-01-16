@@ -5,6 +5,6 @@ These examples were created from scratch using Cisco's Packet Tracer and Cisco M
 
 ![image](https://github.com/bobmmiller/NetworkExamples/blob/main/GRE_VPN/GRE_VPN.png)
 
-![image](https://github.com/BobMMiller/NetworkExamples/blob/main/ELAN/CML_ELAN.jpg)
+![image](https://github.com/BobMMiller/NetworkExamples/blob/main/CampusLAN/CML_Campus.jpg)
 
 ![image](https://github.com/BobMMiller/NetworkExamples/blob/main/BGPMultiHop/multihopbgp.jpg)
