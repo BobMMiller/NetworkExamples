@@ -7,4 +7,4 @@ These examples were created from scratch using Cisco's Packet Tracer and Cisco M
 
 ![image](https://github.com/BobMMiller/NetworkExamples/blob/main/CampusLAN/CML_Campus.jpg)
 
-![image](https://github.com/BobMMiller/NetworkExamples/blob/main/BGPMultiHop/multihopbgp.jpg)
+![image](https://github.com/BobMMiller/NetworkExamples/blob/main/BGP_MultiHop/multihopbgp.jpg)
