@@ -1,0 +1,92 @@
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+ ip address 192.168.23.2 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ ip address 192.168.13.2 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/2
+ ip address 10.0.34.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ redistribute bgp 65001 subnets 
+ network 3.3.3.3 0.0.0.0 area 0
+!
+router bgp 65001
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 10.0.34.2 remote-as 65002
+ network 3.3.3.3 mask 255.255.255.255
+ redistribute ospf 1 
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/1 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end

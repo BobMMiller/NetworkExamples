@@ -1,0 +1,87 @@
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Loopback1
+ ip address 21.21.21.21 255.255.255.255
+ ip ospf 1 area 1
+!
+interface GigabitEthernet0/0/0
+ ip address 10.10.0.1 255.255.255.0
+ ip ospf 1 area 1
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ ip address 10.12.0.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/2
+ ip address 10.13.0.1 255.255.255.0
+ ip ospf 1 area 0
+!
+interface Vlan1
+ no ip address
+!
+router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes
+ area 1 virtual-link 8.8.8.8
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
